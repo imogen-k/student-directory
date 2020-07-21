@@ -20,7 +20,7 @@ end
 def print(students)
   students.each do |student|
     name = student[:name]
-    if name[0] == "r"
+    if name.size <= 12
       puts "#{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
