@@ -1,25 +1,23 @@
 
 def input_students
   puts "Please enter the name of a student."
-  puts "To finish, just hit return twice."
   students = []
   name = gets.chomp
-  puts "What hobbies does #{name} have?"
-  hobbies = gets.chomp
-  puts "Where was #{name} born?"
-  birthplace = gets.chomp
+  puts "What cohort is #{name} in?"
+  cohort = gets.chomp
   while !name.empty? do
-    students << {name: name, cohort: :november, hobbies: hobbies, birthplace: birthplace}
+    students << {name: name, cohort: cohort}
     puts "Now we have #{students.count} students"
-    puts "Please enter the name of the next student."
+    puts "Enter the next student name please."
     name = gets.chomp
-    puts "What hobbies does #{name} have?"
-    hobbies = gets.chomp
-    puts "Where was #{name} born?"
-    birthplace = gets.chomp
+    puts "What cohort is #{name} in?"
+    cohort = gets.chomp
   end
   students
 end
+
+
+
 
 
 def print_header
@@ -32,7 +30,11 @@ def print(students)
   while count < students.length
     students.each do |student|
       count += 1
-      puts "#{student[:name]} (#{student[:cohort]} cohort.) This student likes #{student[:hobbies]}. Born in #{student[:birthplace]}"
+      if student[:cohort] == ""
+        puts "#{student[:name]} (November cohort.)"
+      else
+        puts "#{student[:name]} (#{student[:cohort]} cohort.)"
+      end
     end
   end
 end
