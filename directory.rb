@@ -56,7 +56,7 @@ def process(selection)
     when "9"
       exit
     else
-      puts "I don't know what you mean, try again."
+      puts "I don't know what you mean, try again"
     end
 end
 
